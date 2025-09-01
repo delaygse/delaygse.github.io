@@ -56,7 +56,8 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://yuan1615.github.io" target="_blank">Xin Yuan</a><sup>1</sup>,</span>
+                <!-- <a href="https://yuan1615.github.io" target="_blank">Xin Yuan</a><sup>1</sup>,</span> -->
+                 <a target="_blank">Xin Yuan</a><sup>1</sup>,</span>
                 <span class="author-block">
                   Zezhou Xu<sup>2</sup>,</span>
                   <span class="author-block">
@@ -101,7 +102,7 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/delaygse/delaygse" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -130,21 +131,34 @@
 
 
 <!-- Teaser video-->
-<section class="hero teaser">
+<!-- <section class="hero teaser"> -->
+  <!-- <div class="container is-max-desktop"> -->
+    <!-- <div class="hero-body"> -->
+      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%"> -->
+        <!-- Your video here -->
+        <!-- <source src="static/videos/banner_video.mp4" -->
+        <!-- type="video/mp4"> -->
+      <!-- </video> -->
+      <!-- <h2 class="subtitle has-text-centered"> -->
+        <!-- Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus.  -->
+      <!-- </h2> -->
+    <!-- </div> -->
+  <!-- </div> -->
+<!-- </section> -->
+<!-- End teaser video -->
+
+<!-- Teaser image-->
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      <img src="static/images/delaygse_overview.png" alt="Banner Image" style="width:100%; height:auto;">
+      <h2 class="content has-text-centered">
+        Overview of the DelayGSE framework, integrating acoustic and semantic encoders to guide an autoregressive enhancement model, with delayed ASR conditioning and multi-codebook weighting to improve perceptual quality, intelligibility, and suppress hallucinatory artifacts.
       </h2>
     </div>
   </div>
-</section>
-<!-- End teaser video -->
+</section> -->
+<!-- End teaser image -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -154,7 +168,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Generative speech enhancement methods often yield superior perceptual quality but are more prone than discriminative approaches to producing speech-like hallucinations under low signal-to-noise ratios (SNRs). We present DelayGSE, a multi-task generative framework that delays an automatic speech recognition (ASR) objective to suppress such artifacts, yielding a 22.5\% relative WER reduction in ablations. To balance perceptual quality and semantic fidelity, we introduce a multi-codebook loss-weighting mechanism for discrete-token multi-codebook modeling, where weights are computed from a joint metric of perceptual quality, intelligibility, and timbre similarity. This reduces inter-codebook training conflicts, speeds convergence, and improves both perceptual quality and intelligibility, achieving state-of-the-art results on public test sets. Optional conditioning on ground-truth text further restores speech at extremely low SNRs. Audio examples are available at <a style="color: blue;" href="http://delaygse.github.io/" target="_blank">http://delaygse.github.io/</a>.
           </p>
         </div>
       </div>
@@ -171,32 +185,32 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/delaygse_overview.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          First image description.
+          Overview of the DelayGSE framework, integrating acoustic and semantic encoders to guide an autoregressive enhancement model, with delayed ASR conditioning and multi-codebook weighting to improve perceptual quality, intelligibility, and suppress hallucinatory artifacts.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/rvq_weights.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          Second image description.
+          Illustration of estimating the importance of each RVQ codebook layer using perceptual quality, intelligibility, and speaker similarity metrics, which are then used to weight the LLM training loss (CB denotes CodeBook).
         </h2>
       </div>
-      <div class="item">
+      <!-- <div class="item"> -->
         <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
+        <!-- <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/> -->
+        <!-- <h2 class="subtitle has-text-centered"> -->
+         <!-- Third image description. -->
+       <!-- </h2> -->
+     <!-- </div> -->
+     <!-- <div class="item"> -->
       <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
+      <!-- <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/> -->
+      <!-- <h2 class="subtitle has-text-centered"> -->
+        <!-- Fourth image description. -->
+      <!-- </h2> -->
+    <!-- </div> -->
   </div>
 </div>
 </div>
@@ -207,66 +221,495 @@
 
 
 <!-- Youtube video -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
-    <div class="container">
+    <div class="container"> -->
       <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+      <!-- <h2 class="title is-3">Video Presentation</h2> -->
+      <!-- <div class="columns is-centered has-text-centered"> -->
+        <!-- <div class="column is-four-fifths"> -->
           
-          <div class="publication-video">
+          <!-- <div class="publication-video"> -->
             <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End youtube video -->
 
 
-<!-- Video carousel -->
+<!-- Audio + Mel Spectrogram Section -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
+      <h2 class="title is-3">Audio Samples</h2>
+      <p class="subtitle has-text-centered">
+        Benchmark comparison of open-source generative models and DelayGSE.
+      </p>
+      <h4 class="title is-4">「VCTK-DEMAND」</h4>
+      <div class="table-container">
+        
+        <table>
+          <tbody>
+            <tr>
+              <td colspan="5">
+                <b>VCTK-DEMAND (p232_015) :</b> "The Greeks used to imagine that it was a sign from the gods to foretell war or heavy rain. "
+              </td>
+            </tr>
+            <tr>
+              <th align="center">Noise Input</th>
+              <th align="center">LLaSE-G1</th>
+              <th align="center">Storm</th>
+              <th align="center">FlowSE</th>
+              <th align="center">DelayGSE-IW (ours)</th>
+            </tr>
+            <tr>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/noise_vctkdemand_p232_015.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/noise_vctkdemand_p232_015.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_vctkdemand_p232_015.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_vctkdemand_p232_015.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/storm_vctkdemand_p232_015.png" alt="Storm Spectrogram">
+                  <audio controls preload="metadata" src="examples/storm_vctkdemand_p232_015.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/flowse_vctkdemand_p232_015.png" alt="FlowSE Spectrogram">
+                  <audio controls preload="metadata" src="examples/flowse_vctkdemand_p232_015.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im_vctkdemand_p232_015.png" alt="DelayGSE-IW Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im_vctkdemand_p232_015.wav"></audio>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- 可以复制下面的模板加更多示例 -->
+        <table>
+          <tbody>
+            <tr>
+              <td colspan="5">
+                <b>VCTK-DEMAND (p232_013) :</b> "Some have accepted it as a miracle without physical explanation."
+              </td>
+            </tr>
+            <tr>
+              <th align="center">Noise Input</th>
+              <th align="center">LLaSE-G1</th>
+              <th align="center">Storm</th>
+              <th align="center">FlowSE</th>
+              <th align="center">DelayGSE-IW (ours)</th>
+            </tr>
+            <tr>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/noise_vctkdemand_p232_013.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/noise_vctkdemand_p232_013.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_vctkdemand_p232_013.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_vctkdemand_p232_013.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/storm_vctkdemand_p232_013.png" alt="Storm Spectrogram">
+                  <audio controls preload="metadata" src="examples/storm_vctkdemand_p232_013.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/flowse_vctkdemand_p232_013.png" alt="FlowSE Spectrogram">
+                  <audio controls preload="metadata" src="examples/flowse_vctkdemand_p232_013.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im_vctkdemand_p232_013.png" alt="DelayGSE-IW Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im_vctkdemand_p232_013.wav"></audio>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      
+      <h4 class="title is-4">「DNS Challenge」</h4>
+
+        <table>
+          <tbody>
+            <tr>
+              <td colspan="5">
+                <b>DNS Challenge (Without Reverb | clnsp327_air_conditioner_371242_0_snr7_tl-21_fileid_8) :</b> "Logical order. Non-profit organizations have frequent fundraisers. The most recent geological survey found seismic activity. Corrie attacked the project with extra." (transcribe using Whisper)
+              </td>
+            </tr>
+            <tr>
+              <th align="center">Noise Input</th>
+              <th align="center">LLaSE-G1</th>
+              <th align="center">Storm</th>
+              <th align="center">FlowSE</th>
+              <th align="center">DelayGSE-IW (ours)</th>
+            </tr>
+            <tr>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/noise_dns1_nr_fileid_8.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/noise_dns1_nr_fileid_8.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_dns_nr_fileid_8.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_dns_nr_fileid_8.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/storm_dns1_nr_fileid_8.png" alt="Storm Spectrogram">
+                  <audio controls preload="metadata" src="examples/storm_dns1_nr_fileid_8.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/flowse_dns1_nr_fileid_8.png" alt="FlowSE Spectrogram">
+                  <audio controls preload="metadata" src="examples/flowse_dns1_nr_fileid_8.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im_dns1_nr_fileid_8.png" alt="DelayGSE-IW Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im_dns1_nr_fileid_8.wav"></audio>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      
+        <table>
+          <tbody>
+            <tr>
+              <td colspan="5">
+                <b>DNS Challenge (With Reverb | clnsp81_car_74675_2_snr18_tl-22_fileid_9) :</b> "Doctor was in the ambulance with the patient. Puree some fruit before preparing the skewers. It's not easy to create illuminating." (transcribe using Whisper)
+              </td>
+            </tr>
+            <tr>
+              <th align="center">Noise Input</th>
+              <th align="center">LLaSE-G1</th>
+              <th align="center">Storm</th>
+              <th align="center">FlowSE</th>
+              <th align="center">DelayGSE-IW (ours)</th>
+            </tr>
+            <tr>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/noise_dns1_wr_fileid_9.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/noise_dns1_wr_fileid_9.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_dns_wr_fileid_9.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_dns_wr_fileid_9.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/storm_dns1_wr_fileid_9.png" alt="Storm Spectrogram">
+                  <audio controls preload="metadata" src="examples/storm_dns1_wr_fileid_9.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/flowse_dns1_wr_fileid_9.png" alt="FlowSE Spectrogram">
+                  <audio controls preload="metadata" src="examples/flowse_dns1_wr_fileid_9.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im_dns1_wr_fileid_9.png" alt="DelayGSE-IW Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im_dns1_wr_fileid_9.wav"></audio>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        
+      <table>
+          <tbody>
+            <tr>
+              <td colspan="5">
+                <b>DNS Challenge (Real Recording | ms_realrec_speakerphone_Senja_munching-01_SurfaceBook) :</b> "She had your dark suit and greasy wash water all year." (transcribe using Whisper)
+              </td>
+            </tr>
+            <tr>
+              <th align="center">Noise Input</th>
+              <th align="center">LLaSE-G1</th>
+              <th align="center">Storm</th>
+              <th align="center">FlowSE</th>
+              <th align="center">DelayGSE-IW (ours)</th>
+            </tr>
+            <tr>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/noise_dns1_rr_exp1.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/noise_dns1_rr_exp1.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_dns_rr_exp1.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_dns_rr_exp1.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/storm_dns1_rr_exp1.png" alt="Storm Spectrogram">
+                  <audio controls preload="metadata" src="examples/storm_dns1_rr_exp1.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/flowse_dns1_rr_exp1.png" alt="FlowSE Spectrogram">
+                  <audio controls preload="metadata" src="examples/flowse_dns1_rr_exp1.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im_dns1_rr_exp1.png" alt="DelayGSE-IW Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im_dns1_rr_exp1.wav"></audio>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h4 class="title is-4">「URGENT 2025」</h4>
+        <table>
+          <tbody>
+            <tr>
+              <td colspan="5">
+                <b>URGENT 2025 (English) :</b> "That wall in the living room is white. There is one more piece of bread in the pantry. The store closes at 8pm tonight."
+              </td>
+            </tr>
+            <tr>
+              <th align="center">Noise Input</th>
+              <th align="center">LLaSE-G1</th>
+              <th align="center">Storm</th>
+              <th align="center">FlowSE</th>
+              <th align="center">DelayGSE-IW (ours)</th>
+            </tr>
+            <tr>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/noise_urgent2025_en.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/noise_urgent2025_en.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_urgent2025_en.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_urgent2025_en.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/storm_urgent2025_en.png" alt="Storm Spectrogram">
+                  <audio controls preload="metadata" src="examples/storm_urgent2025_en.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/flowse_urgent2025_en.png" alt="FlowSE Spectrogram">
+                  <audio controls preload="metadata" src="examples/flowse_urgent2025_en.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im_urgent2025_en.png" alt="DelayGSE-IW Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im_urgent2025_en.wav"></audio>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <tbody>
+            <tr>
+              <td colspan="5">
+                <b>URGENT 2025 (Chinese) :</b> "谢拉维斯塔庄园是位于美国亚利桑那州科奇斯县的一个非建制地区。"
+              </td>
+            </tr>
+            <tr>
+              <th align="center">Noise Input</th>
+              <th align="center">LLaSE-G1</th>
+              <th align="center">Storm</th>
+              <th align="center">FlowSE</th>
+              <th align="center">DelayGSE-IW (ours)</th>
+            </tr>
+            <tr>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/noise_urgent2025_zh.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/noise_urgent2025_zh.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_urgent2025_zh.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_urgent2025_zh.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/storm_urgent2025_zh.png" alt="Storm Spectrogram">
+                  <audio controls preload="metadata" src="examples/storm_urgent2025_zh.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/flowse_urgent2025_zh.png" alt="FlowSE Spectrogram">
+                  <audio controls preload="metadata" src="examples/flowse_urgent2025_zh.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im_urgent2025_zh.png" alt="DelayGSE-IW Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im_urgent2025_zh.wav"></audio>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+<h4 class="title is-4">「Internal」</h4>
+        <table>
+          <tbody>
+            <tr>
+              <td colspan="5">
+                <b>URGENT 2025 (English) :</b> "That wall in the living room is white. There is one more piece of bread in the pantry. The store closes at 8pm tonight."
+              </td>
+            </tr>
+            <tr>
+              <th align="center">Noise Input</th>
+              <th align="center">LLaSE-G1</th>
+              <th align="center">Storm</th>
+              <th align="center">FlowSE</th>
+              <th align="center">DelayGSE-IW (ours)</th>
+            </tr>
+            <tr>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/noise_urgent2025_en.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/noise_urgent2025_en.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_urgent2025_en.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_urgent2025_en.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/storm_urgent2025_en.png" alt="Storm Spectrogram">
+                  <audio controls preload="metadata" src="examples/storm_urgent2025_en.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/flowse_urgent2025_en.png" alt="FlowSE Spectrogram">
+                  <audio controls preload="metadata" src="examples/flowse_urgent2025_en.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im_urgent2025_en.png" alt="DelayGSE-IW Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im_urgent2025_en.wav"></audio>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <tbody>
+            <tr>
+              <td colspan="5">
+                <b>URGENT 2025 (Chinese) :</b> "谢拉维斯塔庄园是位于美国亚利桑那州科奇斯县的一个非建制地区。"
+              </td>
+            </tr>
+            <tr>
+              <th align="center">Noise Input</th>
+              <th align="center">LLaSE-G1</th>
+              <th align="center">Storm</th>
+              <th align="center">FlowSE</th>
+              <th align="center">DelayGSE-IW (ours)</th>
+            </tr>
+            <tr>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/noise_urgent2025_zh.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/noise_urgent2025_zh.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_urgent2025_zh.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_urgent2025_zh.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/storm_urgent2025_zh.png" alt="Storm Spectrogram">
+                  <audio controls preload="metadata" src="examples/storm_urgent2025_zh.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/flowse_urgent2025_zh.png" alt="FlowSE Spectrogram">
+                  <audio controls preload="metadata" src="examples/flowse_urgent2025_zh.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im_urgent2025_zh.png" alt="DelayGSE-IW Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im_urgent2025_zh.wav"></audio>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+      </div>
+      </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
-
-
-
+<!-- End Audio + Mel Spectrogram Section -->
 
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -276,17 +719,17 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
+  <!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>BibTex Code Here</code></pre>
     </div>
-</section>
+</section> -->
 <!--End BibTex citation -->
 
 
@@ -297,9 +740,7 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
           </p>
 
         </div>
