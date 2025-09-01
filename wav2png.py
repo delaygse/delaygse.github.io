@@ -45,7 +45,7 @@ def wav_to_spectrogram_png(wav_path, png_path, top_db=80, max_khz=16.0, target_s
     plt.ylim(0, f_max_khz)
     # plt.colorbar(label='Power [dB]')
     plt.tight_layout()
-    plt.savefig(png_path, dpi=300, bbox_inches='tight')
+    plt.savefig(png_path, dpi=75, bbox_inches='tight')
     plt.close()
 
 def main(in_dir, out_dir, top_db=80, max_khz=16.0):
