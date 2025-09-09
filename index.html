@@ -167,7 +167,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Generative speech enhancement methods often yield superior perceptual quality but are more prone than discriminative approaches to producing speech-like hallucinations under low signal-to-noise ratios (SNRs). We present DelayGSE, a multi-task generative framework that delays an automatic speech recognition (ASR) objective to suppress such artifacts, yielding a 15.8% relative WER reduction in ablations. To balance perceptual quality and semantic fidelity, we introduce a multi-codebook loss-weighting mechanism for discrete-token multi-codebook modeling, where weights are computed from a joint metric of perceptual quality, intelligibility, and timbre similarity. This reduces inter-codebook training conflicts, speeds convergence, and improves both perceptual quality and intelligibility, achieving state-of-the-art results on public test sets. Optional conditioning on ground-truth text further restores speech at extremely low SNRs. Audio examples are available at <a style="color: blue;" href="https://delaygse.github.io/" target="_blank">https://delaygse.github.io/</a>.
+            Generative speech enhancement methods often yield superior perceptual quality but are more prone than discriminative approaches to producing speech-like hallucinations under low signal-to-noise ratios (SNRs). We present DelayGSE, a multi-task generative framework that delays an automatic speech recognition (ASR) objective to suppress such artifacts, yielding a 15.8% relative WER reduction in ablations. To balance perceptual quality and semantic fidelity, we introduce an importance-aware codebook weighting for discrete-token multi-codebook modeling, where weights are computed from a joint metric of perceptual quality, intelligibility, and timbre similarity. This reduces inter-codebook training conflicts, speeds convergence, and improves both perceptual quality and intelligibility, achieving state-of-the-art results on public test sets. Optional conditioning on ground-truth text further restores speech at extremely low SNRs. Audio examples are available at <a style="color: blue;" href="https://delaygse.github.io/" target="_blank">https://delaygse.github.io/</a>.
           </p>
         </div>
       </div>
@@ -184,14 +184,14 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- Your image here -->
-        <img src="static/images/delaygse_overview.png" alt="MY ALT TEXT"/>
+        <img src="static/images/delaygse_overview_new.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
-          Overview of the DelayGSE framework, integrating acoustic and semantic encoders to guide an autoregressive enhancement model, with delayed ASR conditioning and multi-codebook weighting to improve perceptual quality, intelligibility, and suppress hallucinatory artifacts.
+          DelayGSE framework. An STFT acoustic encoder and a pretrained Whisper semantic encoder condition an autoregressive Transformer that predicts RVQ tokens. We employ (i) codebook-level delay (stride-1 lower→higher conditioning) and (ii) text-first delayed ASR (predict text tokens, delay acoustic tokens by k steps) to suppress hallucinations. Illustration shows 4-codebook example for clarity.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/rvq_weights.png" alt="MY ALT TEXT"/>
+        <img src="static/images/rvq_weights_new.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
           Illustration of estimating the importance of each RVQ codebook layer using perceptual quality, intelligibility, and speaker similarity metrics, which are then used to weight the LLM training loss (CB denotes CodeBook).
         </h2>
