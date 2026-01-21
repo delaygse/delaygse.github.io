@@ -245,7 +245,127 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
+      <!-- <h2 class="title is-3">Ablation Study</h2> -->
       <h2 class="title is-3">Audio Samples</h2>
+      <p class="subtitle has-text-centered">
+        Comparison of different versions of DelayGSE.
+      </p>
+      <p class="subsubtitle" style="text-align:left;">
+        • <strong>DGSE-EW</strong>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<strong>D</strong>elay<strong>GSE</strong> with <strong>E</strong>qual-<strong>w</strong>eight training).  
+      </p>
+
+      <p class="subsubtitle" style="text-align:left;">
+        • <strong>DGSE-IW</strong>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<strong>D</strong>elay<strong>GSE</strong> with <strong>I</strong>mportance-<strong>w</strong>eighted training).
+      </p>
+
+      <p class="subsubtitle" style="text-align:left;">
+        • <strong>DGSE-IW+A</strong>: &nbsp; (<strong>D</strong>elay<strong>GSE</strong> with <strong>I</strong>mportance-<strong>w</strong>eighted + Delayed <strong>A</strong>SR training).
+      </p>
+
+      <p class="subsubtitle" style="text-align:left;">
+        • <strong>DGSE-IW+AT</strong>: (<strong>D</strong>elay<strong>GSE</strong> with <strong>I</strong>mportance-<strong>w</strong>eighted + Delayed <strong>A</strong>SR training + Ground Truth <strong>T</strong>ext).
+      </p>
+      <div class="table-container">
+        <!-- new examples -->
+        <table>
+          <tbody>
+            <tr>
+              <td colspan="5">
+                <b> <a href="https://www.chimechallenge.org/challenges/chime3/index">CHIME3</a> (F05_440C020C_CAF.CH1) :</b> "The rise in that category in July was led by increased orders for <span style="color:red;font-weight:bold; text-decoration: underline;">aircraft and parts</span>, nonelectrical machinery, <span style="color:red;font-weight:bold; text-decoration: underline;">lumber and furniture</span>."
+              </td>
+            </tr>
+            <tr>
+              <th align="center">Noise Input</th>
+              <th align="center">DelayGSE-EW</th>
+              <th align="center">DelayGSE-IW</th>
+              <th align="center">DelayGSE-IW+A</th>
+              <th align="center">DelayGSE-IW+AT</th>
+            </tr>
+            <tr>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/noise_CHIME3_F05_440C020C_CAF.CH1.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/noise_CHIME3_F05_440C020C_CAF.CH1.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-eq_CHIME3_F05_440C020C_CAF.CH1.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-eq_CHIME3_F05_440C020C_CAF.CH1.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im_CHIME3_F05_440C020C_CAF.CH1.png" alt="Storm Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im_CHIME3_F05_440C020C_CAF.CH1.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im+a_noise_CHIME3_F05_440C020C_CAF.CH1.png" alt="FlowSE Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im+a_noise_CHIME3_F05_440C020C_CAF.CH1.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im+at_noise_CHIME3_F05_440C020C_CAF.CH1.png" alt="DelayGSE-IW Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im+at_noise_CHIME3_F05_440C020C_CAF.CH1.wav"></audio>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table>
+          <tbody>
+            <tr>
+              <td colspan="5">
+                <b>Internal (Exp3) :</b> "我在右侧五米处，一<span style="color:red;font-weight:bold; text-decoration: underline;">磅</span>糖比鸡蛋还贵，咖啡架对沙发来说太高了。船在陡峭的礁石上被撞得<span style="color:red;font-weight:bold; text-decoration: underline;">四分五裂</span>，我们试图把<span style="color:red;font-weight:bold; text-decoration: underline;">硬币</span>放回原处但没有成功。"
+              </td>
+            </tr>
+            <tr>
+              <th align="center">Noise Input</th>
+              <th align="center">DelayGSE-EW</th>
+              <th align="center">DelayGSE-IW</th>
+              <th align="center">DelayGSE-IW+A</th>
+              <th align="center">DelayGSE-IW+AT</th>
+            </tr>
+            <tr>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/noise_internal_exp3.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/noise_internal_exp3.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-eq_internal_exp3.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-eq_internal_exp3.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im_internal_exp3.png" alt="Storm Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im_internal_exp3.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im+a_internal_exp3.png" alt="FlowSE Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im+a_internal_exp3.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im+at_internal_exp3.png" alt="DelayGSE-IW Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im+at_internal_exp3.wav"></audio>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <p class="subtitle has-text-centered">
         Benchmark comparison of open-source generative models and DelayGSE.
       </p>
@@ -253,107 +373,7 @@
       <p><sup>*</sup> Since DelayGSE, trained with importance-weighted learning, achieves the highest perceptual quality, the audio here is generated by DelayGSE-IW. Audio from the ablation study is used for comparing different versions of DelayGSE.</p>
       </footer>
       <h2 class="title is-3"></h2>
-      <h4 class="title is-4">「VCTK-DEMAND」</h4>
       <div class="table-container">
-        
-        <table>
-          <tbody>
-            <tr>
-              <td colspan="5">
-                <b>VCTK-DEMAND (p232_015) :</b> "The Greeks used to imagine that it was a sign from the gods to foretell war or heavy rain. "
-              </td>
-            </tr>
-            <tr>
-              <th align="center">Noise Input</th>
-              <th align="center">LLaSE-G1</th>
-              <th align="center">Storm</th>
-              <th align="center">FlowSE</th>
-              <th align="center">DelayGSE-IW (ours)</th>
-            </tr>
-            <tr>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/noise_vctkdemand_p232_015.png" alt="Noise Input Spectrogram">
-                  <audio controls preload="metadata" src="examples/noise_vctkdemand_p232_015.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/llase-g1_vctkdemand_p232_015.png" alt="LLaSE-G1 Spectrogram">
-                  <audio controls preload="metadata" src="examples/llase-g1_vctkdemand_p232_015.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/storm_vctkdemand_p232_015.png" alt="Storm Spectrogram">
-                  <audio controls preload="metadata" src="examples/storm_vctkdemand_p232_015.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/flowse_vctkdemand_p232_015.png" alt="FlowSE Spectrogram">
-                  <audio controls preload="metadata" src="examples/flowse_vctkdemand_p232_015.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/dgse-im_vctkdemand_p232_015.png" alt="DelayGSE-IW Spectrogram">
-                  <audio controls preload="metadata" src="examples/dgse-im_vctkdemand_p232_015.wav"></audio>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <!-- 可以复制下面的模板加更多示例 -->
-        <table>
-          <tbody>
-            <tr>
-              <td colspan="5">
-                <b>VCTK-DEMAND (p232_013) :</b> "Some have accepted it as a miracle without physical explanation."
-              </td>
-            </tr>
-            <tr>
-              <th align="center">Noise Input</th>
-              <th align="center">LLaSE-G1</th>
-              <th align="center">Storm</th>
-              <th align="center">FlowSE</th>
-              <th align="center">DelayGSE-IW (ours)</th>
-            </tr>
-            <tr>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/noise_vctkdemand_p232_013.png" alt="Noise Input Spectrogram">
-                  <audio controls preload="metadata" src="examples/noise_vctkdemand_p232_013.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/llase-g1_vctkdemand_p232_013.png" alt="LLaSE-G1 Spectrogram">
-                  <audio controls preload="metadata" src="examples/llase-g1_vctkdemand_p232_013.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/storm_vctkdemand_p232_013.png" alt="Storm Spectrogram">
-                  <audio controls preload="metadata" src="examples/storm_vctkdemand_p232_013.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/flowse_vctkdemand_p232_013.png" alt="FlowSE Spectrogram">
-                  <audio controls preload="metadata" src="examples/flowse_vctkdemand_p232_013.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/dgse-im_vctkdemand_p232_013.png" alt="DelayGSE-IW Spectrogram">
-                  <audio controls preload="metadata" src="examples/dgse-im_vctkdemand_p232_013.wav"></audio>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
       
       <h4 class="title is-4">「DNS Challenge」</h4>
 
@@ -503,6 +523,7 @@
             </tr>
           </tbody>
         </table>
+
         <h4 class="title is-4">「URGENT 2025」</h4>
         <table>
           <tbody>
@@ -601,8 +622,109 @@
             </tr>
           </tbody>
         </table>
+      
+        <h4 class="title is-4">「VCTK-DEMAND」</h4>
+        <table>
+          <tbody>
+            <tr>
+              <td colspan="5">
+                <b>VCTK-DEMAND (p232_015) :</b> "The Greeks used to imagine that it was a sign from the gods to foretell war or heavy rain. "
+              </td>
+            </tr>
+            <tr>
+              <th align="center">Noise Input</th>
+              <th align="center">LLaSE-G1</th>
+              <th align="center">Storm</th>
+              <th align="center">FlowSE</th>
+              <th align="center">DelayGSE-IW (ours)</th>
+            </tr>
+            <tr>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/noise_vctkdemand_p232_015.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/noise_vctkdemand_p232_015.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_vctkdemand_p232_015.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_vctkdemand_p232_015.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/storm_vctkdemand_p232_015.png" alt="Storm Spectrogram">
+                  <audio controls preload="metadata" src="examples/storm_vctkdemand_p232_015.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/flowse_vctkdemand_p232_015.png" alt="FlowSE Spectrogram">
+                  <audio controls preload="metadata" src="examples/flowse_vctkdemand_p232_015.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im_vctkdemand_p232_015.png" alt="DelayGSE-IW Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im_vctkdemand_p232_015.wav"></audio>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-<h4 class="title is-4">「Internal」</h4>
+        <!-- 可以复制下面的模板加更多示例 -->
+        <table>
+          <tbody>
+            <tr>
+              <td colspan="5">
+                <b>VCTK-DEMAND (p232_013) :</b> "Some have accepted it as a miracle without physical explanation."
+              </td>
+            </tr>
+            <tr>
+              <th align="center">Noise Input</th>
+              <th align="center">LLaSE-G1</th>
+              <th align="center">Storm</th>
+              <th align="center">FlowSE</th>
+              <th align="center">DelayGSE-IW (ours)</th>
+            </tr>
+            <tr>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/noise_vctkdemand_p232_013.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/noise_vctkdemand_p232_013.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_vctkdemand_p232_013.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_vctkdemand_p232_013.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/storm_vctkdemand_p232_013.png" alt="Storm Spectrogram">
+                  <audio controls preload="metadata" src="examples/storm_vctkdemand_p232_013.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/flowse_vctkdemand_p232_013.png" alt="FlowSE Spectrogram">
+                  <audio controls preload="metadata" src="examples/flowse_vctkdemand_p232_013.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im_vctkdemand_p232_013.png" alt="DelayGSE-IW Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im_vctkdemand_p232_013.wav"></audio>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+      <h4 class="title is-4">「Internal」</h4>
         <table>
           <tbody>
             <tr>
@@ -701,129 +823,7 @@
           </tbody>
         </table>
       </div>
-<h2 class="title is-3">Ablation Study</h2>
-      <p class="subtitle has-text-centered">
-        Comparison of different versions of DelayGSE.
-      </p>
-      <p class="subsubtitle" style="text-align:left;">
-        • <strong>DGSE-EW</strong>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<strong>D</strong>elay<strong>GSE</strong> with <strong>E</strong>qual-<strong>w</strong>eight training).  
-      </p>
 
-      <p class="subsubtitle" style="text-align:left;">
-        • <strong>DGSE-IW</strong>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<strong>D</strong>elay<strong>GSE</strong> with <strong>I</strong>mportance-<strong>w</strong>eighted training).
-      </p>
-
-      <p class="subsubtitle" style="text-align:left;">
-        • <strong>DGSE-IW+A</strong>: &nbsp; (<strong>D</strong>elay<strong>GSE</strong> with <strong>I</strong>mportance-<strong>w</strong>eighted + Delayed <strong>A</strong>SR training).
-      </p>
-
-      <p class="subsubtitle" style="text-align:left;">
-        • <strong>DGSE-IW+AT</strong>: (<strong>D</strong>elay<strong>GSE</strong> with <strong>I</strong>mportance-<strong>w</strong>eighted + Delayed <strong>A</strong>SR training + Ground Truth <strong>T</strong>ext).
-      </p>
-      <div class="table-container">
-        <!-- new examples -->
-        <table>
-          <tbody>
-            <tr>
-              <td colspan="5">
-                <b> <a href="https://www.chimechallenge.org/challenges/chime3/index">CHIME3</a> (F05_440C020C_CAF.CH1) :</b> "The rise in that category in July was led by increased orders for <span style="color:red;font-weight:bold; text-decoration: underline;">aircraft and parts</span>, nonelectrical machinery, <span style="color:red;font-weight:bold; text-decoration: underline;">lumber and furniture</span>."
-              </td>
-            </tr>
-            <tr>
-              <th align="center">Noise Input</th>
-              <th align="center">DelayGSE-EW</th>
-              <th align="center">DelayGSE-IW</th>
-              <th align="center">DelayGSE-IW+A</th>
-              <th align="center">DelayGSE-IW+AT</th>
-            </tr>
-            <tr>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/noise_CHIME3_F05_440C020C_CAF.CH1.png" alt="Noise Input Spectrogram">
-                  <audio controls preload="metadata" src="examples/noise_CHIME3_F05_440C020C_CAF.CH1.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/dgse-eq_CHIME3_F05_440C020C_CAF.CH1.png" alt="LLaSE-G1 Spectrogram">
-                  <audio controls preload="metadata" src="examples/dgse-eq_CHIME3_F05_440C020C_CAF.CH1.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/dgse-im_CHIME3_F05_440C020C_CAF.CH1.png" alt="Storm Spectrogram">
-                  <audio controls preload="metadata" src="examples/dgse-im_CHIME3_F05_440C020C_CAF.CH1.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/dgse-im+a_noise_CHIME3_F05_440C020C_CAF.CH1.png" alt="FlowSE Spectrogram">
-                  <audio controls preload="metadata" src="examples/dgse-im+a_noise_CHIME3_F05_440C020C_CAF.CH1.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/dgse-im+at_noise_CHIME3_F05_440C020C_CAF.CH1.png" alt="DelayGSE-IW Spectrogram">
-                  <audio controls preload="metadata" src="examples/dgse-im+at_noise_CHIME3_F05_440C020C_CAF.CH1.wav"></audio>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <table>
-          <tbody>
-            <tr>
-              <td colspan="5">
-                <b>Internal (Exp3) :</b> "我在右侧五米处，一<span style="color:red;font-weight:bold; text-decoration: underline;">磅</span>糖比鸡蛋还贵，咖啡架对沙发来说太高了。船在陡峭的礁石上被撞得<span style="color:red;font-weight:bold; text-decoration: underline;">四分五裂</span>，我们试图把<span style="color:red;font-weight:bold; text-decoration: underline;">硬币</span>放回原处但没有成功。"
-              </td>
-            </tr>
-            <tr>
-              <th align="center">Noise Input</th>
-              <th align="center">DelayGSE-EW</th>
-              <th align="center">DelayGSE-IW</th>
-              <th align="center">DelayGSE-IW+A</th>
-              <th align="center">DelayGSE-IW+AT</th>
-            </tr>
-            <tr>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/noise_internal_exp3.png" alt="Noise Input Spectrogram">
-                  <audio controls preload="metadata" src="examples/noise_internal_exp3.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/dgse-eq_internal_exp3.png" alt="LLaSE-G1 Spectrogram">
-                  <audio controls preload="metadata" src="examples/dgse-eq_internal_exp3.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/dgse-im_internal_exp3.png" alt="Storm Spectrogram">
-                  <audio controls preload="metadata" src="examples/dgse-im_internal_exp3.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/dgse-im+a_internal_exp3.png" alt="FlowSE Spectrogram">
-                  <audio controls preload="metadata" src="examples/dgse-im+a_internal_exp3.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/dgse-im+at_internal_exp3.png" alt="DelayGSE-IW Spectrogram">
-                  <audio controls preload="metadata" src="examples/dgse-im+at_internal_exp3.wav"></audio>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
-
-      </div>
-      </div>
-      </div>
     </div>
   </div>
 </section>
