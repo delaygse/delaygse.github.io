@@ -721,55 +721,6 @@
         • <strong>DGSE-IW+AT</strong>: (<strong>D</strong>elay<strong>GSE</strong> with <strong>I</strong>mportance-<strong>w</strong>eighted + Delayed <strong>A</strong>SR training + Ground Truth <strong>T</strong>ext).
       </p>
       <div class="table-container">
-        
-        <table>
-          <tbody>
-            <tr>
-              <td colspan="5">
-                <b>Internal (Exp3) :</b> "我在右侧五米处，一<span style="color:red;font-weight:bold; text-decoration: underline;">磅</span>糖比鸡蛋还贵，咖啡架对沙发来说太高了。船在陡峭的礁石上被撞得<span style="color:red;font-weight:bold; text-decoration: underline;">四分五裂</span>，我们试图把<span style="color:red;font-weight:bold; text-decoration: underline;">硬币</span>放回原处但没有成功。"
-              </td>
-            </tr>
-            <tr>
-              <th align="center">Noise Input</th>
-              <th align="center">DelayGSE-EW</th>
-              <th align="center">DelayGSE-IW</th>
-              <th align="center">DelayGSE-IW+A</th>
-              <th align="center">DelayGSE-IW+AT</th>
-            </tr>
-            <tr>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/noise_internal_exp3.png" alt="Noise Input Spectrogram">
-                  <audio controls preload="metadata" src="examples/noise_internal_exp3.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/dgse-eq_internal_exp3.png" alt="LLaSE-G1 Spectrogram">
-                  <audio controls preload="metadata" src="examples/dgse-eq_internal_exp3.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/dgse-im_internal_exp3.png" alt="Storm Spectrogram">
-                  <audio controls preload="metadata" src="examples/dgse-im_internal_exp3.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/dgse-im+a_internal_exp3.png" alt="FlowSE Spectrogram">
-                  <audio controls preload="metadata" src="examples/dgse-im+a_internal_exp3.wav"></audio>
-                </div>
-              </td>
-              <td class="audio-cell">
-                <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/dgse-im+at_internal_exp3.png" alt="DelayGSE-IW Spectrogram">
-                  <audio controls preload="metadata" src="examples/dgse-im+at_internal_exp3.wav"></audio>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
         <!-- new examples -->
         <table>
           <tbody>
@@ -820,6 +771,54 @@
           </tbody>
         </table>
 
+        <table>
+          <tbody>
+            <tr>
+              <td colspan="5">
+                <b>Internal (Exp3) :</b> "我在右侧五米处，一<span style="color:red;font-weight:bold; text-decoration: underline;">磅</span>糖比鸡蛋还贵，咖啡架对沙发来说太高了。船在陡峭的礁石上被撞得<span style="color:red;font-weight:bold; text-decoration: underline;">四分五裂</span>，我们试图把<span style="color:red;font-weight:bold; text-decoration: underline;">硬币</span>放回原处但没有成功。"
+              </td>
+            </tr>
+            <tr>
+              <th align="center">Noise Input</th>
+              <th align="center">DelayGSE-EW</th>
+              <th align="center">DelayGSE-IW</th>
+              <th align="center">DelayGSE-IW+A</th>
+              <th align="center">DelayGSE-IW+AT</th>
+            </tr>
+            <tr>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/noise_internal_exp3.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/noise_internal_exp3.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-eq_internal_exp3.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-eq_internal_exp3.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im_internal_exp3.png" alt="Storm Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im_internal_exp3.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im+a_internal_exp3.png" alt="FlowSE Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im+a_internal_exp3.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/dgse-im+at_internal_exp3.png" alt="DelayGSE-IW Spectrogram">
+                  <audio controls preload="metadata" src="examples/dgse-im+at_internal_exp3.wav"></audio>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
         </div>
 
       </div>
@@ -855,11 +854,11 @@
         <i>Parler-TTS</i>. 
         In <b>GitHub</b>, 2024, <a href="https://github.com/huggingface/parler-tts" target="_blank">https://github.com/huggingface/parler-tts</a>.
       </li>
-      <li>
+      <!-- <li>
         Nasretdinov et al. 
         <i>Robust Speech Recognition with Schrödinger Bridge-Based Speech Enhancement</i>. 
         In <b>IEEE ICASSP</b>, 2025, <a href="https://arxiv.org/pdf/2505.04237" target="_blank">https://arxiv.org/pdf/2505.04237</a>.
-      </li>
+      </li> -->
       <li>
         Kang, Boyi et al. 
         <i>LLaSE-G1</i>. 
