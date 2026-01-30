@@ -243,7 +243,7 @@
 </section> -->
 <!-- End youtube video -->
 
-
+<!-- GAN-based -->
 <!-- Audio + Mel Spectrogram Section -->
 <section class="hero is-small">
   <div class="hero-body">
@@ -254,19 +254,19 @@
         Comparison of different versions of DelayGSE.
       </p>
       <p class="subsubtitle" style="text-align:left;">
-        • <strong>DGSE-EW</strong>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<strong>D</strong>elay<strong>GSE</strong> with <strong>E</strong>qual-<strong>w</strong>eight training).  
+        • <strong>DGSE-EW</strong>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<strong>D</strong>elay<strong>GSE</strong> with <strong>E</strong>qual-<strong>w</strong>eight training, where all RVQ codebooks share equal CE loss weights).  
       </p>
 
       <p class="subsubtitle" style="text-align:left;">
-        • <strong>DGSE-IW</strong>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<strong>D</strong>elay<strong>GSE</strong> with <strong>I</strong>mportance-<strong>w</strong>eighted training).
+        • <strong>DGSE-IW</strong>: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (<strong>D</strong>elay<strong>GSE</strong> with <strong>I</strong>mportance-<strong>w</strong>eighted training using the scheme in Section~2.5).
       </p>
 
       <p class="subsubtitle" style="text-align:left;">
-        • <strong>DGSE-IW+A</strong>: &nbsp; (<strong>D</strong>elay<strong>GSE</strong> with <strong>I</strong>mportance-<strong>w</strong>eighted + Delayed <strong>A</strong>SR training).
+        • <strong>DGSE-IW+T</strong>: &nbsp; (<strong>D</strong>elay<strong>GSE</strong> with <strong>I</strong>mportance-<strong>w</strong>eighted + Delayed <strong>T</strong>ext-aware supervision).
       </p>
 
       <p class="subsubtitle" style="text-align:left;">
-        • <strong>DGSE-IW+AT</strong>: (<strong>D</strong>elay<strong>GSE</strong> with <strong>I</strong>mportance-<strong>w</strong>eighted + Delayed <strong>A</strong>SR training + Ground Truth <strong>T</strong>ext).
+        • <strong>DGSE-IW+TG</strong>: (<strong>D</strong>elay<strong>GSE</strong> with <strong>I</strong>mportance-<strong>w</strong>eighted + Delayed <strong>T</strong>ext-aware supervision + with inference conditioned on <strong>G</strong>round Truth Text).
       </p>
       <div class="table-container">
         <!-- new examples -->
@@ -383,15 +383,16 @@
         <table>
           <tbody>
             <tr>
-              <td colspan="5">
+              <td colspan="6">
                 <b>DNS Challenge (Without Reverb | clnsp327_air_conditioner_371242_0_snr7_tl-21_fileid_8) :</b> "Logical order. Non-profit organizations have frequent fundraisers. The most recent geological survey found seismic activity. Corrie attacked the project with extra." (transcribe using Whisper)
               </td>
             </tr>
             <tr>
               <th align="center">Noise Input</th>
-              <th align="center">LLaSE-G1</th>
+              <th align="center">GAN-based</th>
               <th align="center">Storm</th>
               <th align="center">FlowSE</th>
+              <th align="center">LLaSE-G1</th>
               <th align="center">DelayGSE-IW (ours)</th>
             </tr>
             <tr>
@@ -403,8 +404,8 @@
               </td>
               <td class="audio-cell">
                 <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/llase-g1_dns_nr_fileid_8.png" alt="LLaSE-G1 Spectrogram">
-                  <audio controls preload="metadata" src="examples/llase-g1_dns_nr_fileid_8.wav"></audio>
+                  <img class="spectrogram-img" src="examples/gan_dns1_nr_fileid_8.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/gan_dns1_nr_fileid_8.wav"></audio>
                 </div>
               </td>
               <td class="audio-cell">
@@ -421,6 +422,12 @@
               </td>
               <td class="audio-cell">
                 <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_dns_nr_fileid_8.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_dns_nr_fileid_8.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
                   <img class="spectrogram-img" src="examples/dgse-im_dns1_nr_fileid_8.png" alt="DelayGSE-IW Spectrogram">
                   <audio controls preload="metadata" src="examples/dgse-im_dns1_nr_fileid_8.wav"></audio>
                 </div>
@@ -432,15 +439,16 @@
         <table>
           <tbody>
             <tr>
-              <td colspan="5">
+              <td colspan="6">
                 <b>DNS Challenge (With Reverb | clnsp81_car_74675_2_snr18_tl-22_fileid_9) :</b> "Doctor was in the ambulance with the patient. Puree some fruit before preparing the skewers. It's not easy to create illuminating." (transcribe using Whisper)
               </td>
             </tr>
             <tr>
               <th align="center">Noise Input</th>
-              <th align="center">LLaSE-G1</th>
+              <th align="center">GAN-based</th>
               <th align="center">Storm</th>
               <th align="center">FlowSE</th>
+              <th align="center">LLaSE-G1</th>
               <th align="center">DelayGSE-IW (ours)</th>
             </tr>
             <tr>
@@ -452,8 +460,8 @@
               </td>
               <td class="audio-cell">
                 <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/llase-g1_dns_wr_fileid_9.png" alt="LLaSE-G1 Spectrogram">
-                  <audio controls preload="metadata" src="examples/llase-g1_dns_wr_fileid_9.wav"></audio>
+                  <img class="spectrogram-img" src="examples/gan_dns1_wr_fileid_9.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/gan_dns1_wr_fileid_9.wav"></audio>
                 </div>
               </td>
               <td class="audio-cell">
@@ -470,6 +478,12 @@
               </td>
               <td class="audio-cell">
                 <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_dns_wr_fileid_9.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_dns_wr_fileid_9.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
                   <img class="spectrogram-img" src="examples/dgse-im_dns1_wr_fileid_9.png" alt="DelayGSE-IW Spectrogram">
                   <audio controls preload="metadata" src="examples/dgse-im_dns1_wr_fileid_9.wav"></audio>
                 </div>
@@ -481,15 +495,16 @@
       <table>
           <tbody>
             <tr>
-              <td colspan="5">
+              <td colspan="6">
                 <b>DNS Challenge (Real Recording | ms_realrec_speakerphone_Senja_munching-01_SurfaceBook) :</b> "She had your dark suit and greasy wash water all year." (transcribe using Whisper)
               </td>
             </tr>
             <tr>
               <th align="center">Noise Input</th>
-              <th align="center">LLaSE-G1</th>
+              <th align="center">GAN-based</th>
               <th align="center">Storm</th>
               <th align="center">FlowSE</th>
+              <th align="center">LLaSE-G1</th>
               <th align="center">DelayGSE-IW (ours)</th>
             </tr>
             <tr>
@@ -501,8 +516,8 @@
               </td>
               <td class="audio-cell">
                 <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/llase-g1_dns_rr_exp1.png" alt="LLaSE-G1 Spectrogram">
-                  <audio controls preload="metadata" src="examples/llase-g1_dns_rr_exp1.wav"></audio>
+                  <img class="spectrogram-img" src="examples/gan_dns1_rr_exp1.png" alt="Storm Spectrogram">
+                  <audio controls preload="metadata" src="examples/gan_dns1_rr_exp1.wav"></audio>
                 </div>
               </td>
               <td class="audio-cell">
@@ -519,6 +534,12 @@
               </td>
               <td class="audio-cell">
                 <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_dns_rr_exp1.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_dns_rr_exp1.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
                   <img class="spectrogram-img" src="examples/dgse-im_dns1_rr_exp1.png" alt="DelayGSE-IW Spectrogram">
                   <audio controls preload="metadata" src="examples/dgse-im_dns1_rr_exp1.wav"></audio>
                 </div>
@@ -531,15 +552,16 @@
         <table>
           <tbody>
             <tr>
-              <td colspan="5">
+              <td colspan="6">
                 <b>URGENT 2025 (English) :</b> "That wall in the living room is white. There is one more piece of bread in the pantry. The store closes at 8pm tonight."
               </td>
             </tr>
             <tr>
               <th align="center">Noise Input</th>
-              <th align="center">LLaSE-G1</th>
+              <th align="center">GAN-based</th>
               <th align="center">Storm</th>
               <th align="center">FlowSE</th>
+              <th align="center">LLaSE-G1</th>
               <th align="center">DelayGSE-IW (ours)</th>
             </tr>
             <tr>
@@ -551,8 +573,8 @@
               </td>
               <td class="audio-cell">
                 <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/llase-g1_urgent2025_en.png" alt="LLaSE-G1 Spectrogram">
-                  <audio controls preload="metadata" src="examples/llase-g1_urgent2025_en.wav"></audio>
+                  <img class="spectrogram-img" src="examples/gan_urgent2025_en.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/gan_urgent2025_en.wav"></audio>
                 </div>
               </td>
               <td class="audio-cell">
@@ -569,6 +591,12 @@
               </td>
               <td class="audio-cell">
                 <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_urgent2025_en.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_urgent2025_en.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
                   <img class="spectrogram-img" src="examples/dgse-im_urgent2025_en.png" alt="DelayGSE-IW Spectrogram">
                   <audio controls preload="metadata" src="examples/dgse-im_urgent2025_en.wav"></audio>
                 </div>
@@ -580,15 +608,16 @@
         <table>
           <tbody>
             <tr>
-              <td colspan="5">
+              <td colspan="6">
                 <b>URGENT 2025 (Chinese) :</b> "谢拉维斯塔庄园是位于美国亚利桑那州科奇斯县的一个非建制地区。"
               </td>
             </tr>
             <tr>
               <th align="center">Noise Input</th>
-              <th align="center">LLaSE-G1</th>
+              <th align="center">GAN-based</th>
               <th align="center">Storm</th>
               <th align="center">FlowSE</th>
+              <th align="center">LLaSE-G1</th>
               <th align="center">DelayGSE-IW (ours)</th>
             </tr>
             <tr>
@@ -600,8 +629,8 @@
               </td>
               <td class="audio-cell">
                 <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/llase-g1_urgent2025_zh.png" alt="LLaSE-G1 Spectrogram">
-                  <audio controls preload="metadata" src="examples/llase-g1_urgent2025_zh.wav"></audio>
+                  <img class="spectrogram-img" src="examples/gan_urgent2025_zh.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/gan_urgent2025_zh.wav"></audio>
                 </div>
               </td>
               <td class="audio-cell">
@@ -618,6 +647,12 @@
               </td>
               <td class="audio-cell">
                 <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_urgent2025_zh.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_urgent2025_zh.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
                   <img class="spectrogram-img" src="examples/dgse-im_urgent2025_zh.png" alt="DelayGSE-IW Spectrogram">
                   <audio controls preload="metadata" src="examples/dgse-im_urgent2025_zh.wav"></audio>
                 </div>
@@ -630,15 +665,16 @@
         <table>
           <tbody>
             <tr>
-              <td colspan="5">
+              <td colspan="6">
                 <b>VCTK-DEMAND (p232_015) :</b> "The Greeks used to imagine that it was a sign from the gods to foretell war or heavy rain. "
               </td>
             </tr>
             <tr>
               <th align="center">Noise Input</th>
-              <th align="center">LLaSE-G1</th>
+              <th align="center">GAN-based</th>
               <th align="center">Storm</th>
               <th align="center">FlowSE</th>
+              <th align="center">LLaSE-G1</th>
               <th align="center">DelayGSE-IW (ours)</th>
             </tr>
             <tr>
@@ -650,8 +686,8 @@
               </td>
               <td class="audio-cell">
                 <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/llase-g1_vctkdemand_p232_015.png" alt="LLaSE-G1 Spectrogram">
-                  <audio controls preload="metadata" src="examples/llase-g1_vctkdemand_p232_015.wav"></audio>
+                  <img class="spectrogram-img" src="examples/gan_vctkdemand_p232_015.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/gan_vctkdemand_p232_015.wav"></audio>
                 </div>
               </td>
               <td class="audio-cell">
@@ -668,6 +704,12 @@
               </td>
               <td class="audio-cell">
                 <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_vctkdemand_p232_015.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_vctkdemand_p232_015.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
                   <img class="spectrogram-img" src="examples/dgse-im_vctkdemand_p232_015.png" alt="DelayGSE-IW Spectrogram">
                   <audio controls preload="metadata" src="examples/dgse-im_vctkdemand_p232_015.wav"></audio>
                 </div>
@@ -680,15 +722,16 @@
         <table>
           <tbody>
             <tr>
-              <td colspan="5">
+              <td colspan="6">
                 <b>VCTK-DEMAND (p232_013) :</b> "Some have accepted it as a miracle without physical explanation."
               </td>
             </tr>
             <tr>
               <th align="center">Noise Input</th>
-              <th align="center">LLaSE-G1</th>
+              <th align="center">GAN-based</th>
               <th align="center">Storm</th>
               <th align="center">FlowSE</th>
+              <th align="center">LLaSE-G1</th>
               <th align="center">DelayGSE-IW (ours)</th>
             </tr>
             <tr>
@@ -700,8 +743,8 @@
               </td>
               <td class="audio-cell">
                 <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/llase-g1_vctkdemand_p232_013.png" alt="LLaSE-G1 Spectrogram">
-                  <audio controls preload="metadata" src="examples/llase-g1_vctkdemand_p232_013.wav"></audio>
+                  <img class="spectrogram-img" src="examples/gan_vctkdemand_p232_013.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/gan_vctkdemand_p232_013.wav"></audio>
                 </div>
               </td>
               <td class="audio-cell">
@@ -714,6 +757,12 @@
                 <div class="cell-content-wrapper">
                   <img class="spectrogram-img" src="examples/flowse_vctkdemand_p232_013.png" alt="FlowSE Spectrogram">
                   <audio controls preload="metadata" src="examples/flowse_vctkdemand_p232_013.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_vctkdemand_p232_013.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_vctkdemand_p232_013.wav"></audio>
                 </div>
               </td>
               <td class="audio-cell">
@@ -731,15 +780,16 @@
         <table>
           <tbody>
             <tr>
-              <td colspan="5">
+              <td colspan="6">
                 <b>Internal (Exp1):</b> "床前明月光，疑是地上霜，举头望明月，低头思故乡。你就是那个爱打篮球的人，总理对任何事情都要刨根问底。"
               </td>
             </tr>
             <tr>
               <th align="center">Noise Input</th>
-              <th align="center">LLaSE-G1</th>
+              <th align="center">GAN-based</th>
               <th align="center">Storm</th>
               <th align="center">FlowSE</th>
+              <th align="center">LLaSE-G1</th>
               <th align="center">DelayGSE-IW (ours)</th>
             </tr>
             <tr>
@@ -751,8 +801,8 @@
               </td>
               <td class="audio-cell">
                 <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/llase-g1_internal_exp1.png" alt="LLaSE-G1 Spectrogram">
-                  <audio controls preload="metadata" src="examples/llase-g1_internal_exp1.wav"></audio>
+                  <img class="spectrogram-img" src="examples/gan_internal_exp1.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/gan_internal_exp1.wav"></audio>
                 </div>
               </td>
               <td class="audio-cell">
@@ -769,6 +819,12 @@
               </td>
               <td class="audio-cell">
                 <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_internal_exp1.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_internal_exp1.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
                   <img class="spectrogram-img" src="examples/dgse-im_internal_exp1.png" alt="DelayGSE-IW Spectrogram">
                   <audio controls preload="metadata" src="examples/dgse-im_internal_exp1.wav"></audio>
                 </div>
@@ -780,15 +836,16 @@
         <table>
           <tbody>
             <tr>
-              <td colspan="5">
+              <td colspan="6">
                 <b>Internal (Exp2):</b> "你就是那个爱打篮球的人，总理对任何事情都要刨根问底，渐渐的他还真就睡着了，这身衣服就像被大雨淋过似的。"
               </td>
             </tr>
             <tr>
               <th align="center">Noise Input</th>
-              <th align="center">LLaSE-G1</th>
+              <th align="center">GAN-based</th>
               <th align="center">Storm</th>
               <th align="center">FlowSE</th>
+              <th align="center">LLaSE-G1</th>
               <th align="center">DelayGSE-IW (ours)</th>
             </tr>
             <tr>
@@ -800,8 +857,8 @@
               </td>
               <td class="audio-cell">
                 <div class="cell-content-wrapper">
-                  <img class="spectrogram-img" src="examples/llase-g1_internal_exp2.png" alt="LLaSE-G1 Spectrogram">
-                  <audio controls preload="metadata" src="examples/llase-g1_internal_exp2.wav"></audio>
+                  <img class="spectrogram-img" src="examples/gan_internal_exp2.png" alt="Noise Input Spectrogram">
+                  <audio controls preload="metadata" src="examples/gan_internal_exp2.wav"></audio>
                 </div>
               </td>
               <td class="audio-cell">
@@ -814,6 +871,12 @@
                 <div class="cell-content-wrapper">
                   <img class="spectrogram-img" src="examples/flowse_internal_exp2.png" alt="FlowSE Spectrogram">
                   <audio controls preload="metadata" src="examples/flowse_internal_exp2.wav"></audio>
+                </div>
+              </td>
+              <td class="audio-cell">
+                <div class="cell-content-wrapper">
+                  <img class="spectrogram-img" src="examples/llase-g1_internal_exp2.png" alt="LLaSE-G1 Spectrogram">
+                  <audio controls preload="metadata" src="examples/llase-g1_internal_exp2.wav"></audio>
                 </div>
               </td>
               <td class="audio-cell">
