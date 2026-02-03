@@ -35,7 +35,7 @@ def wav_to_spectrogram_png(wav_path, png_path, top_db=80, max_khz=16.0, target_s
     f_max_khz = max(max_khz, (sr / 2.0) / 1000.0)
 
     # 绘图（imshow 更稳定）
-    plt.figure(figsize=(4.2, 6.46))
+    plt.figure(figsize=(5.0, 6.46))
     extent = [t[0] if len(t) else 0.0, t[-1] if len(t) else len(x)/sr,
               f[0] / 1000.0, (f[-1] / 1000.0)]
     plt.imshow(Sxx_db, origin='lower', aspect='auto', extent=extent,
@@ -51,12 +51,14 @@ def wav_to_spectrogram_png(wav_path, png_path, top_db=80, max_khz=16.0, target_s
 def main(in_dir, out_dir, top_db=80, max_khz=16.0):
     os.makedirs(out_dir, exist_ok=True)
     for fn in os.listdir(in_dir):
-        if 'F05_440C020C_CAF.CH1' in fn or 'internal_exp3' in fn:
-            continue
+        # if 'F05_440C020C_CAF.CH1' in fn or 'internal_exp3' in fn:
+        #     continue
         if fn.lower().endswith(".wav"):
             wav_path = os.path.join(in_dir, fn)
             png_name = os.path.splitext(fn)[0] + ".png"
             png_path = os.path.join(out_dir, png_name)
+            if os.path.exists(png_path):
+                continue
             try:
                 wav_to_spectrogram_png(wav_path, png_path, top_db=top_db, max_khz=max_khz)
                 print("✅", png_path)
